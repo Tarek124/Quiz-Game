@@ -80,7 +80,8 @@ const firstBtn = document.getElementById("firstBtn"),
     queText = document.getElementById('que_text'),
     Que_num = document.getElementById('Que_num'),
     Next_que = document.getElementById("Next_que"),
-    bodyDiv = document.getElementById('bodyDiv');
+    bodyDiv = document.getElementById('bodyDiv'),
+    forthPage = document.getElementById('forthPage')
 
 thirdPage.style.cssText = `display:none;`
 
@@ -96,23 +97,19 @@ cntinue.addEventListener('click', () => {
     secondPage.style.cssText = `display: none;`
     MyQuizApp.style.cssText = `display: none;`
     thirdPage.style.cssText = `display: block;`
-    startTimer(15);
 
 
 
+    // starttimer()
 
 
     let num = 0;
     Next_que.addEventListener('click', () => {
-        let value = timers.innerText;
-        if (value == 0) {
-            if (num < questions.length - 1) {
-                num++
-                showQusetion(num)
-                startTimer(15);
-            } else {
-                console.log("you're task is done")
-            }
+        if (num < questions.length - 1) {
+            num++
+            showQusetion(num)
+        } else {
+            console.log("you're task is done")
         }
 
     })
@@ -120,54 +117,55 @@ cntinue.addEventListener('click', () => {
 
 })
 
+// function starttimer() {
+//     let timer = 15, seconds;
+//     myInterval = setInterval(() => {
+//         seconds = parseInt(timer % 60, 10);
 
 
-function startTimer(duration) {
-    var timer = duration, seconds;
-    const myInterval = setInterval(() => {
-        seconds = parseInt(timer % 60, 10);
 
-        timers.textContent = seconds;
-        console.log(timer)
-        if (seconds > 0) {
-            if (--timer < 0) {
-                timer = duration;
-            }
-        }
-        else {
-            timer.textContent = 0
-            clearInterval(myInterval)
-        }
+//         timers.textContent = seconds;
+//         console.log(timer)
+//         if (seconds > 0) {
+//             if (--timer < 0) {
+//                 timer = duration;
+//             }
+//         }
+//         else {
+//             timer.textContent = 0
+//             clearInterval(myInterval)
+//         }
 
-    }, 1000);
-}
-
+//     }, 1000);
+// }
 function showQusetion(e) {
     let que_tag = questions[e].numb + ". " + questions[e].que;
     queText.innerText = que_tag
 
-    let que_op = "<li onclick='optionSelected(this)'>" + questions[e].options[0] + "</li>" +
-        "<li onclick='optionSelected(this)'>" + questions[e].options[1] + "</li>" +
-        "<li onclick='optionSelected(this)' >" + questions[e].options[2] + "</li>" +
-        "<li onclick='optionSelected(this)' >" + questions[e].options[3] + "</li>";
+    let que_op = "<li class='li' onclick='optionSelected(this)'>" + questions[e].options[0] + "</li>" +
+        "<li class='li' onclick='optionSelected(this)'>" + questions[e].options[1] + "</li>" +
+        "<li class='li' onclick='optionSelected(this)' >" + questions[e].options[2] + "</li>" +
+        "<li class='li' onclick='optionSelected(this)' >" + questions[e].options[3] + "</li>";
     option.innerHTML = que_op
 
     Que_num.innerText = questions[e].numb
 
 
 }
+
 function optionSelected(answer) {
     let nums = parseInt(Que_num.textContent) - 1
     let userAns = answer.innerText;
     let correctAns = questions[nums].ans;
-
-    console.log(answer)
+    var crect = 0;
 
     if (userAns == correctAns) {
         answer.className = "rightAns"
         let i = document.createElement("i");
         i.className = "fa-regular fa-circle-check color"
         answer.appendChild(i);
+
+        crect++;
 
     } else {
         answer.className = "wrongAns"
@@ -177,17 +175,21 @@ function optionSelected(answer) {
     }
     setTimeout(() => {
         showQusetion(nums + 1)
-        startTimer(15);
-    }, 2000)
+
+    }, 900)
 }
 setInterval(() => {
-    if (parseInt(timers.innerText) == 0) {
-        let x = parseInt(Que_num.innerText)
-        showQusetion(x)
-        startTimer(15);
+    if (Que_num.innerText == 11) {
+        setTimeout(() => {
+            thirdPage.style.cssText = ` display:none;`
+            forthPage.style.cssText = `display:flex`
+            document.getElementById('currentAns').innerText = crect;
+        }, 1000);
     }
-}, 1500)
 
+}, 1000)
+
+forthPage.style.cssText = `display:none`
 showQusetion(0)
 
 
