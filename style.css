@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+#MyQuizApp,
+#secondPage,
+#thirdPage {
+    transform: translate(-50%, -50%);
+}
+
+#firstBtn,
+#continue,
+#Next_que {
+    border-radius: 57px 0 51px 0;
+    transition: 0.2s ease-in-out;
+}
+
+#firstBtn:hover,
+#continue:hover,
+#Next_que:hover {
+    background: rgb(29, 194, 194);
+}
+
+#exit {
+    border-radius: 0 57px 0 51px;
+    transition: 0.2s ease-in-out;
+}
+
+#exit:hover {
+    background: #801b1b;
+}
+
+#time {
+    border-radius: 0 8px 8px 0;
+}
+
+.que_text {
+    margin: 1rem 1rem 0 1rem;
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+.option {
+    margin-top: 2rem;
+
+}
+
+.option li {
+    width: 90%;
+    height: 50px;
+    background: #16a9ee34;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    padding: 5px 0 5px 16px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    cursor: pointer;
+
+}
+
+
+
+.option .wrongAns:hover {
+    background: #e0030362;
+}
+
+.option .wrongAns {
+    background: #e0030362;
+    border: 1.5px solid rgba(0, 0, 0, 0.192);
+    width: 92%;
+    height: 54px;
+    transition: .5s;
+}
+
+.colorwrong {
+    color: #e42020fb;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.option .rightAns {
+    background: rgba(40, 245, 84, 0.26);
+    border: 1.5px solid rgb(40, 245, 84);
+    width: 92%;
+    height: 54px;
+    transition: .5s;
+}
+
+.option .rightAns:hover {
+    background: rgba(40, 245, 84, 0.26);
+}
+
+.option li:hover {
+    background: #16aaee6e;
+    transition: .3s;
+}
+
+.color {
+    color: rgb(40, 245, 84);
+    margin-left: 8px;
+    margin-bottom: 4px;
+    font-size: 20px;
+    font-weight: 700;
+}

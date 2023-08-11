@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-[#f1f1f1]">
+
+    <!-- first page -->
+
+
+    <div id="MyQuizApp"
+        class="shadow-2xl absolute top-[50%] left-[50%] w-[320px] h-[580px] bg-white box rounded-[50px]">
+        <div class="img">
+            <img class="w-[100%]" src="./img/Question.svg" alt="">
+        </div>
+        <div id="page1Text" class="h-[168px]">
+            <h3 class="mt-[29px] text-center font-bold text-[22px]">Quiz App with Fixed time</h3>
+            <p class="text-center mt-[15px] px-4">quiz, a contest in which participants test what they know by answering
+                questions on one or more topics.</p>
+            <h2 class=" font-semibold text-center text-xl mt-[30px] underline  text-[#4d72eb]">let's play with me</h2>
+        </div>
+        <div class="ml-[185.5px] mt-[118px]" id="Mybtn">
+            <button
+                class="text-[18px] font-semibold border-none outline-none text-white py-[7px] px-6 cursor-pointer  bg-[tomato]"
+                id="firstBtn">Start Quiz</button>
+        </div>
+    </div>
+
+    <!-- second page -->
+
+    <div id="secondPage"
+        class=" shadow-2xl absolute top-[50%] left-[50%] w-[320px] h-[580px] bg-white box rounded-[50px] hidden">
+        <div>
+            <h2 class="mt-[29px] text-center font-bold text-[22px] text-[#4d72eb] mb-3">
+                Some Rule Of This Quiz
+            </h2>
+            <div class="w-[100%] h-[1px] bg-[#c0bdbd]"></div>
+        </div>
+        <div class="mt-8 px-4 h-[320px]">
+            <ol class="gap-">
+                <li class="my-5">1. You will have only<span style="color: #007bff;"> 15 seconds </span>per each
+                    question.
+                </li>
+                <li class="my-5">2. Once you select your answer, it can't be undone</li>
+                <li class="my-5">3. You can't select any option once time goes off.</li>
+                <li class="my-5">4. You can't exit from the Quiz while you're playing</li>
+                <li class="my-5">5. You'll get points on the basis of your correct answers.</li>
+            </ol>
+        </div>
+        <div class="flex justify-between items-end h-[153px]">
+            <button id="exit"
+                class="text-[18px] font-semibold border-none outline-none text-white py-[7px] px-6 cursor-pointer  bg-[tomato]">Exit
+                Quiz</button>
+            <button id="continue"
+                class="text-[18px] font-semibold border-none outline-none text-white py-[7px] px-6 cursor-pointer  bg-[tomato]">Continue</button>
+        </div>
+
+    </div>
+
+
+    <!-- #thirdPage -->
+
+
+    <div id="thirdPage"
+        class="shadow-2xl absolute top-[50%] left-[50%] w-[320px] h-[580px] bg-white box rounded-[50px]">
+
+        <div class="flex justify-between p-6">
+            <h2 class="font-semibold tracking-wide ">Start game</h2>
+            <div class="bg-[#1c7ac763] pl-2 rounded-lg w-[94px] flex justify-between">
+                <h1 class="inline">Timer</h1>
+                <div id="time" class="bg-[#000000c4] text-white px-2  w-[31px]">15</div>
+            </div>
+        </div>
+        <div></div>
+        <div class="h-[388px]" id="bodyDiv">
+            <p id="que_text" class="que_text h-[58px]">
+            </p>
+            <ol id="option" class="option h-[275px]">
+            </ol>
+        </div>
+        <div class="w-[100%] h-[1px] bg-[#c0bdbd8f] mt-[3rem]"></div>
+        <div class="flex justify-between items-end mt-2">
+            <p class="p-2 ml-6"><span id="Que_num"></span> of 11 Question</p>
+            <button id="Next_que"
+                class="text-[18px] font-semibold border-none outline-none text-white py-[10px] px-6 cursor-pointer  bg-[tomato]">Next
+                Que</button>
+
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
